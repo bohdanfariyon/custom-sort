@@ -2,21 +2,21 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='custom-sort-cli', # Назва пакету на PyPI
+    name='custom-sort-cli', 
     version='0.1.0',
     packages=find_packages(),
     author='Bohdan',
-    author_email='your.email@example.com',
+    author_email='bohdanfarijon.com',
     description='A custom sort command line tool using Python and Click.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/bohdanfariyon/custom-sort', # Посилання на ваш GitHub репозиторій
+    url='https://github.com/bohdanfariyon/custom-sort', 
     install_requires=[
         'click',
     ],
     entry_points={
         'console_scripts': [
-            'csort=custom_sort.main:cli', # Створює команду csort
+            'csort=custom_sort.main:cli',
         ],
     },
     classifiers=[

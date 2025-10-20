@@ -17,24 +17,24 @@ def cli(file, reverse, numeric, unique, output):
     try:
         lines = file.readlines()
 
-        # Застосовуємо унікальність, якщо потрібно
+        
         if unique:
-            lines = sorted(list(set(lines))) # Найпростіший спосіб зробити унікальними і посортувати
+            lines = sorted(list(set(lines))) 
 
-        # Визначаємо ключ сортування
+        
         sort_key = None
         if numeric:
             def sort_key(line):
                 try:
-                    # Спробуємо перетворити рядок (або його першу частину) в число
+                 
                     return float(line.strip().split()[0])
                 except (ValueError, IndexError):
-                    return 0.0 # Якщо не число, вважаємо за 0
+                    return 0.0
 
-        # Сортування
+
         sorted_lines = sorted(lines, key=sort_key, reverse=reverse)
 
-        # Вивід результату
+
         output.writelines(sorted_lines)
 
     except Exception as e:

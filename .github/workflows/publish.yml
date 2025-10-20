@@ -3,7 +3,7 @@ name: Upload Python Package
 
 on:
   release:
-    types: [published] # Запускати при створенні нового релізу на GitHub
+    types: [published] 
 
 jobs:
   deploy:
@@ -24,4 +24,4 @@ jobs:
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         user: __token__
-        password: ${{ secrets.PYPI_API_TOKEN }} # Секретний токен
+        password: ${{ secrets.PYPI_API_TOKEN }}
